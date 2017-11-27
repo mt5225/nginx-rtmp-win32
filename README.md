@@ -39,6 +39,10 @@ ith-http_slice_module --with-mail --with-stream --with-openssl=objs/lib/openssl-
 ffmpeg -i "rtsp://192.168.86.24:8554/1080P_1.mkv" -vcodec libx264 -vprofile baseline -threads 2 -fflags +genpts -acodec aac -strict -2 -s 320x320 -f flv rtmp://127.0.0.1/live/demo.sdp
 ```
 
+- `source:  rtsp://192.168.86.24:8554/1080P_1.mkv`
+- `dst: rtmp://127.0.0.1/live/demo.sdp`
+- `transcode:  320x320`
+
 # view dst
 ```
 rtmp://127.0.0.1:1935/live/demo.sdp
